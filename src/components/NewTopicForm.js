@@ -9,6 +9,7 @@ import { addTopic } from "../features/topics/topicSlice";
 
 export default function NewTopicForm() {
   const [name, setName] = useState("");
+  console.log(name);
   const [icon, setIcon] = useState("");
   const history = useHistory();
   const dispatch = useDispatch()
@@ -21,7 +22,7 @@ export default function NewTopicForm() {
     }
     // dispatch your add topic action here
     history.push(ROUTES.topicsRoute());
-    dispatch(addTopic({uniqueID, name, icon}))
+    dispatch(addTopic({name: name,id: uniqueID, icon: icon}))
   };
 
   return (
